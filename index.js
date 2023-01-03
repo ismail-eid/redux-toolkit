@@ -12,6 +12,8 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 // Parse reuqests for content-type - application/x-www-form-url-encoded
 app.use(bodyParser.urlencoded({ extended: true }));
+// routes
+require('./routes/tutorial.routes')(app);
 // Simple route
 app.get('/', (req, res) => {
   res.send({ message: 'Welcome to bezkoder application.' })
